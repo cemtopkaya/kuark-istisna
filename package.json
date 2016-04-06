@@ -1,6 +1,6 @@
 {
   "name": "kuark-istisna",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "istisna fonksiyonlari olacak",
   "main": "index.js",
   "directories": {
@@ -18,7 +18,6 @@
   "homepage": "https://github.com/cemtopkaya/kuark-istisna#readme",
   "devDependencies": {
     "chai": "3.5.0",
-    "clear": "0.0.1",
     "eslint": "2.5.1",
     "eslint-config-standard": "5.1.0",
     "eslint-watch": "2.1.10",
@@ -36,7 +35,7 @@
     "watch": "0.17.1"
   },
   "config": {
-    "___Nasıl": "user could change the behavior by doing: npm config set foo:port 80",
+    "___Nasıl": "user could change the behavior by doing: npm config set foo:port 80, process.env.npm_package_config_port",
     "port": "3000"
   },
   "scripts": {
@@ -67,6 +66,7 @@
     "version:patch": "npm version patch  -m \" %s Versiyonu yapıldı\" --no-git-tag-version",
     "version:minor": "npm version minor",
     "version:major": "npm version major",
+    "vp": "npm run version:patch",
     "_______________________________________________________________ GIT": "_____________",
     "git:add": "git add -A",
     "git:commit": "git commit -m \"Otomatik mesaj\"",
@@ -76,7 +76,15 @@
     "_______________________________________________________________ PUBLISH": "__________",
     "prepublish": "",
     "publish": "",
-    "postpublish": ""
+    "postpublish": "",
+    "_______________________________________________________________ UPDATE KUARK PACKAGES": "__________",
+    "update:all": "npm run update-kuark-api && npm run update-kuark-batch && npm run update-kuark-db && npm run update-kuark-extensions && npm run update-kuark-schema && npm run update-kuark-app",
+    "update-kuark-app": "ncu /^kuark-/ -u --packageFile ../../App/package.json && cd ../../App && npm update kuark-extensions",
+    "update-kuark-api": "ncu /^kuark-/ -u --packageFile ../kuark-api/package.json && cd ../kuark-api && npm update kuark-extensions",
+    "update-kuark-batch": "ncu /^kuark-/ -u --packageFile ../kuark-batch/package.json && cd ../kuark-batch && npm update kuark-extensions",
+    "update-kuark-db": "ncu /^kuark-/ -u --packageFile ../kuark-db/package.json && cd ../kuark-db && npm update kuark-extensions",
+    "update-kuark-extensions": "ncu /^kuark-/ -u --packageFile ../kuark-extensions/package.json && cd ../kuark-extensions && npm update kuark-extensions",
+    "update-kuark-schema": "ncu /^kuark-/ -u --packageFile ../kuark-schema/package.json && cd ../kuark-schema && npm update kuark-extensions"
   },
   "dependencies": {}
 }
