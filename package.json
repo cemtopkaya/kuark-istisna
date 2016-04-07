@@ -1,6 +1,6 @@
 {
   "name": "kuark-istisna",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "istisna fonksiyonlari olacak",
   "main": "index.js",
   "directories": {
