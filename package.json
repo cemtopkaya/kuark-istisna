@@ -1,6 +1,6 @@
 {
   "name": "kuark-istisna",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "istisna fonksiyonlari olacak",
   "main": "index.js",
   "directories": {
@@ -67,12 +67,14 @@
     "git:push": "git push",
     "git:AC": "npm run git:add && npm run git:commit",
     "git:ACP": "npm run git:add && npm run git:commit && npm run git:push",
+    "git:ACPT": "npm run git:add && npm run git:commit && npm run git:push && git push --tags",
     "_______________________________________________________________ PUBLISH": "__________",
     "1prepublish": "",
     "1publish": "",
     "1postpublish": "",
     "_______________________________________________________________ UPDATE KUARK PACKAGES": "__________",
     "update:all": "npm run update-kuark-api && npm run update-kuark-batch && npm run update-kuark-db && npm run update-kuark-extensions && npm run update-kuark-schema && npm run update-kuark-app",
+    "u:all": "npm update kuark-api kuark-batch kuark-db kuark-extensions kuark-istisna kuark-app",
     "update-kuark-app": "ncu /^kuark-/ -u --packageFile ../../App/package.json && cd ../../App && npm update kuark-extensions",
     "update-kuark-api": "ncu /^kuark-/ -u --packageFile ../kuark-api/package.json && cd ../kuark-api && npm update kuark-extensions",
     "update-kuark-batch": "ncu /^kuark-/ -u --packageFile ../kuark-batch/package.json && cd ../kuark-batch && npm update kuark-extensions",
